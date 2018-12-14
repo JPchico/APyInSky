@@ -1,4 +1,4 @@
-def main()
+def main():
     """
     Example of how to generate a minimum input file for `APyInSky`
     """
