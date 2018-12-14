@@ -36,8 +36,8 @@ def main():
     Skx_control['Data_control']['file_name']=''
 
     yaml.add_representer(OrderedDict, lambda dumper, data: dumper.represent_mapping('tag:yaml.org,2002:map', data.items()))
-    with open(file_name, 'w') as outfile:
-        yaml.dump(SK_summary, outfile,default_flow_style=False)
+    with open('Skx_inp.yml', 'w') as outfile:
+        yaml.dump(Skx_control, outfile,default_flow_style=False)
 
 if __name__ == '__main__':
     main()
