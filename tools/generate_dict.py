@@ -22,8 +22,8 @@ def main():
     Skx_control['Data_control']['Misc']['zipped']=False
     Skx_control['Data_control']['Misc']['sub_index']=0
     Skx_control['Data_control']['Misc']['gridpoint']=[500,500]
-    Skx_control['Data_control']['Topology']=OrderedDict()
-    Skx_control['Data_control']['Topology']['execute']=False
+    Skx_control['Data_control']['topology']=OrderedDict()
+    Skx_control['Data_control']['topology']['execute']=False
     Skx_control['Data_control']['Skyrmion_velocity']=OrderedDict()
     Skx_control['Data_control']['Skyrmion_velocity']['execute']=False
     Skx_control['Data_control']['Skyrmion_velocity']['time_step']=float(1e-16)

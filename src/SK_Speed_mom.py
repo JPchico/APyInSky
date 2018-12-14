@@ -140,7 +140,7 @@ def get_bare_data(itr,Skx_data,Skx_plots,Skx_control,x_mesh,y_mesh,del_val,    \
         #-----------------------------------------------------------------------
         # Calculate topological information
         #-----------------------------------------------------------------------
-        if Skx_control['Data_control']['topology']:
+        if Skx_control['Data_control']['topology']['execute']:
             curr_charge=topological_charge(del_val,Skx_data.pos,index_del,     \
                 Skx_data.mom[start_pos:final_pos,:])
         if Skx_control['Data_control']['Skyrmion_velocity']['plot_energy']:
@@ -343,7 +343,7 @@ def Skyrmion_vel(out_folder,Skx_control,Skx_data):
     #---------------------------------------------------------------------------
     # Calculate the Delaunay tessellation of the coordinates
     #---------------------------------------------------------------------------
-    if Skx_control['Data_control']['topology']:
+    if Skx_control['Data_control']['topology']['execute']:
         (del_val,index_del)=Skx_geometry.triangulate_data(Skx_data.pos,        \
             Skx_control['Data_control']['Misc']['sub_index'])
     else:
@@ -392,7 +392,7 @@ def Skyrmion_vel(out_folder,Skx_control,Skx_data):
         #-----------------------------------------------------------------------
         # Store the topological information
         #-----------------------------------------------------------------------
-        if Skx_control['Data_control']['topology']:
+        if Skx_control['Data_control']['topology']['execute']:
             topo_charge.append(curr_charge)
         #-----------------------------------------------------------------------
         # Store the information needed for the forces
@@ -467,7 +467,7 @@ def Skyrmion_vel(out_folder,Skx_control,Skx_data):
     #---------------------------------------------------------------------------
     # Clean the topology data
     #---------------------------------------------------------------------------
-    if Skx_control['Data_control']['topology']:
+    if Skx_control['Data_control']['topology']['execute']:
         del del_val,index_del
     #---------------------------------------------------------------------------
     # If there is more than one data point in the array continue
@@ -647,7 +647,7 @@ def Skyrmion_vel(out_folder,Skx_control,Skx_data):
         #-----------------------------------------------------------------------
         # Topological information
         #-----------------------------------------------------------------------
-        if Skx_control['Data_control']['topology']:
+        if Skx_control['Data_control']['topology']['execute']:
             file_name=out_folder+\
             '/SK_topo'+Skx_control['Data_control']['file_name']+'.dat'
             SK_topo = open(file_name,'w')

@@ -412,7 +412,9 @@ def SK_overview(file_name,pos_bare,pos_grid,pos_filt,vel_bare,vel_bare_mod,   \
         float(np.mean(rad_grid[0:ten_perc]))
     SK_summary['radius']['method']['grid']['t_fin']=                           \
         float(np.mean(rad_grid[ninety_perc:]))
-
+    #---------------------------------------------------------------------------
+    # Seeting options for the yaml file and printing to file
+    #---------------------------------------------------------------------------
     yaml.add_representer(OrderedDict, lambda dumper, data: dumper.represent_mapping('tag:yaml.org,2002:map', data.items()))
     with open(file_name, 'w') as outfile:
         yaml.dump(SK_summary, outfile,default_flow_style=False)
@@ -421,7 +423,19 @@ def SK_overview(file_name,pos_bare,pos_grid,pos_filt,vel_bare,vel_bare_mod,   \
     return
 
 def SK_static_overview(file_name,topo_charge,pos,rad,deviation):
-    
+    """
+    Writing key information from the static profile to file to a yaml file for ease of access.
+    Args
+    ----------
+        - file_name: (str) name of the output file.
+        - topo_charge: (float) topological charge of the configuration.
+        - pos: (float [2] array) position of the skyrmion core
+        - rad: (float) radius of the skyrmion
+        - deviation: (float) deviation from a perfect circle
+    Author
+    ----------
+    Jonathan Chico
+    """
     import yaml
     from collections import OrderedDict
 
@@ -515,7 +529,7 @@ def set_format(data_file,file_prefix,zipped):
     # Check whether the file is in the new or old fmt
     #---------------------------------------------------------------------------
     try:
-        comp=str(line[0])
+        comp=str(line[0,0])[0]
     except:
         comp=str(line)
 

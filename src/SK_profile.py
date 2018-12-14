@@ -44,7 +44,7 @@ def profile_wrapper(Skx_control):
     #---------------------------------------------------------------------------
     # Calculate the topological charge
     #---------------------------------------------------------------------------
-    if Skx_control['Data_control']['topology']:
+    if Skx_control['Data_control']['topology']['execute']:
         (del_val,index_del)=Skx_geometry.triangulate_data(Skx_data.pos,        \
             Skx_control['Data_control']['Misc']['sub_index'])
         topo_charge=topological_charge(del_val,Skx_data.pos,index_del,\
