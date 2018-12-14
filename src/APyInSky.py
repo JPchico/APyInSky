@@ -1,8 +1,5 @@
-import SK_GNEB
 import SK_profile
-import SK_geometry
 import SK_Speed_mom
-import SK_Ene_Profile
 from SK_IO_control import SK_init
 
 def main():
